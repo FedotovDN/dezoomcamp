@@ -20,12 +20,12 @@ http://weatherworld.us-east-2.elasticbeanstalk.com/
 <BR>
 This application query data from Google BigQuery.
 <BR><BR>
-<strong>How to start:</strong><BR>
+<strong>How to start pipeline:</strong><BR>
 1.Make network:<BR>
 <i>docker network airflow_default</i><BR>
-2.Start Postgres with PGAdmin:<BR>
-<i>docker compose docker-compose.yaml</i><BR>
-3.Start Airflow:<BR>
-<i>docker airflow/compose docker-compose.yaml</i><BR>
+2.Start Postgres with PGAdmin in root folder:<BR>
+<i>docker-compose up</i><BR>
+3.Start Airflow in <A href="./airflow">airflow folder</A>:<BR>
+<i>docker-compose up</i><BR>
 4.Start demonstration application from http://weatherworld.us-east-2.elasticbeanstalk.com/ or manually:<BR>
 <i>python dash/app/main.py</i>
