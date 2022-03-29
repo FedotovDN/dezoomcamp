@@ -1,4 +1,4 @@
-<strong>Weather project</strong>
+<h2><strong>Weather project</strong></h2>
 
 <IMG SRC="diagram.jpg">
 
@@ -11,7 +11,7 @@ https://www.ncei.noaa.gov/data/global-summary-of-the-day/archive/
 <BR>
 1.<strong>data_ingestion.py</strong> (<A href="./airflow/dags/data_ingestion.py">source</A> in <A href="./airflow/dags">DAG folder</A>) - loading data from NOAA-database to local <strong>Postgres DB</strong>. The NOAA-database contains many archives by year. Each archives contain many files with data from different weather stations. The Postgres database contains tables for every year since 1929.
 <BR>
-2.<strong>data_ingestion_GC.py</strong> (<A href="./airflow/dags/data_ingestion_GC.py">source</A> in <A href="./airflow/dags">DAG folder</A>) - loading data from <strong>Postgres DB</strong> to <strong>Google BigQuery</strong>. In Google BigQuery there is only one partitioned (by date) table "day_stat_part_date".
+2.<strong>data_ingestion_GC.py</strong> (<A href="./airflow/dags/data_ingestion_GC.py">source</A> in <A href="./airflow/dags">DAG folder</A>) - loading data from <strong>Postgres DB</strong> to <strong>Google BigQuery</strong> (limited scope to 2019 because data is too large). In Google BigQuery there is only one partitioned (by date) table "day_stat_part_date". 
 <BR>
 <BR>  
 <strong>Dashboard</strong> developed in Dash Python (<A href="./dash">dash folder</A>). The application was dockerized and uploaded to AWS Elastic Beanstalk.<BR>
@@ -23,9 +23,9 @@ This application query data from Google BigQuery.
 <strong>How to start:</strong><BR>
 1.Make network:<BR>
 <i>docker network airflow_default</i><BR>
-2.Start Postgres with PGAdmin:</i><BR>
-<i>docker compose docker-compose.yaml<BR>
-3.Start Airflow:</i><BR>
-<i>docker airflow/compose docker-compose.yaml<BR>
+2.Start Postgres with PGAdmin:<BR>
+<i>docker compose docker-compose.yaml</i><BR>
+3.Start Airflow:<BR>
+<i>docker airflow/compose docker-compose.yaml</i><BR>
 4.Start demonstration application from http://weatherworld.us-east-2.elasticbeanstalk.com/ or manually:<BR>
 <i>python dash/app/main.py</i>
